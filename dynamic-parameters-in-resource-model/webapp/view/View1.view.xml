@@ -1,0 +1,12 @@
+<mvc:View controllerName="sap.com.dynamicparametersinresourcemodel.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox >
+                <Label text="{POData>/}"/>
+                <Button text="save" press="handleSave"/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
