@@ -1,0 +1,27 @@
+<mvc:View xmlns:smartfield="sap.ui.comp.smartfield" xmlns:smartform="sap.ui.comp.smartform" controllerName="sap.com.smartcontrols.controller.DetailPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page1" title="Employee Information" showNavButton="true" navButtonPress="onNavPress">
+        <content>
+            <smartform:SmartForm id="smartForm">
+                <smartform:Group label="Employee">
+                    <smartform:GroupElement>
+                        <smartfield:SmartField textLabel="Employee ID" value="{EmployeeID}"></smartfield:SmartField>
+                    </smartform:GroupElement>
+                    <smartform:GroupElement>
+                        <smartfield:SmartField textLabel="First Name" value="{FirstName}"></smartfield:SmartField>
+                    </smartform:GroupElement>
+                    <smartform:GroupElement>
+                        <smartfield:SmartField textLabel="Last Name" value="{LastName}"></smartfield:SmartField>
+                    </smartform:GroupElement>
+                    <smartform:GroupElement>
+                        <smartfield:SmartField textLabel="Birth Date" value="{BirthDate}"></smartfield:SmartField>
+                    </smartform:GroupElement>
+                    <smartform:GroupElement>
+                        <smartfield:SmartField textLabel="City" value="{City}"></smartfield:SmartField>
+                    </smartform:GroupElement>
+                </smartform:Group>
+            </smartform:SmartForm>
+        </content>
+    </Page>
+</mvc:View>
