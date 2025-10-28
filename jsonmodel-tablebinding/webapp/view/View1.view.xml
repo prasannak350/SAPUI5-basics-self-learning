@@ -1,0 +1,79 @@
+<mvc:View controllerName="sap.com.jsonmodeltablebinding.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table items="{ProductModel>/ProductCollection}" id="idTable">
+            <headerToolbar>
+                <Toolbar >
+                    <content>
+                    <ToolbarSpacer width="60%"/>
+                        <SearchField liveChange="onLiveSearchTableData"></SearchField>
+                    </content>
+                </Toolbar>
+            </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Product Id"/>
+                        <!-- <footer>
+                            <Text text="Product Id Info"/>
+                        </footer> -->
+                    </Column>
+                    <Column >
+                        <Text text="Product Name"/>
+                    </Column>
+                    <Column >
+                        <Text text="Supplier Name"/>
+                    </Column>
+                    <Column >
+                        <Text text="Date of Sale"/>
+                    </Column>
+                    <Column >
+                        <Text text="Quantity"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{ProductModel>productId}"/>
+                            <!-- <Input value="{ProductModel>ProductName}"/> -->
+                            <!-- making the binding mode as one way (if we make any changes in view, they will not be reflected in the model)-->
+                            <Input value="{path: 'ProductModel>ProductName', mode: 'sap.ui.model.BindingMode.OneWay'}"/>
+                            <Text text="{ProductModel>SupplierName}"/>
+                            <Text text="{ProductModel>DateofSale}"/>
+                            <Text text="{ProductModel>Quantity}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+
+            <!-- trying to bind the data to the new table cells using bind aggregation methond in controller -->
+            <Table items="{}" id="newTable">
+                <columns>
+                    <Column>
+                        <Text text="Name"/>
+                    </Column>
+                    <Column >
+                        <Text text="Age"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{name}"/>
+                            <Text text="{age}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Bar>
+               <contentRight>
+                    <Button text="Get Model" press="getJsonModel"/>
+               </contentRight> 
+            </Bar>    
+        </footer>
+    </Page>
+</mvc:View>
