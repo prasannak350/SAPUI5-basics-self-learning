@@ -1,0 +1,39 @@
+<mvc:View controllerName="sap.com.passingdatafromtabletofragment.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table items="{oProductJsonModel>/Products}">
+                <columns>
+                    <Column>
+                        <Label text="Product ID"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="Product Name"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="Category Name"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="Company Name"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="Unit Price"></Label>
+                    </Column>
+                </columns>
+                <items>
+                <!-- to make the row clickable we are adding type="active" -->
+                    <ColumnListItem type="Active" press="onRowClick">
+                        <cells>
+                            <Text text="{oProductJsonModel>ProductID}"></Text>
+                            <Text text="{oProductJsonModel>ProductName}"></Text>
+                            <Text text="{oProductJsonModel>Category/CategoryName}"></Text>
+                            <Text text="{oProductJsonModel>Supplier/CompanyName}"></Text>
+                            <Text text="{oProductJsonModel>UnitPrice}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns= "sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"> 
+    <Dialog title="Product Information"> 
+        <content>
+        <f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Product ID" />
+				<Text text="{oProductJsonModel>ProductID}"/>
+                <Label text="Product Name" />
+				<Text text="{oProductJsonModel>ProductName}"/>
+                <Label text="Category Name" />
+				<Text text="{oProductJsonModel>Category/CategoryName}"/>
+                <Label text="Company Name" />
+				<Text text="{oProductJsonModel>Supplier/CompanyName}"/>
+                <Label text="Unit Price" />
+				<Text text="{oProductJsonModel>UnitPrice}"/>
+				<Label text="Reorder Level" />
+				<Text text="{oProductJsonModel>ReorderLevel}"/>
+			</f:content>
+		</f:SimpleForm>
+        </content>
+        <endButton> 
+            <Button text="close" press="handleCloseDialog"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
