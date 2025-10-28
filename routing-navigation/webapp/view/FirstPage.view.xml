@@ -1,0 +1,16 @@
+<mvc:View controllerName="sap.com.routingnavigation.controller.FirstPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page1" title="{i18n>title}">
+        <content >
+            <Text text="Welcome to first page"/>
+        </content>
+        <footer>
+            <Bar design="Footer">
+                <contentRight>
+                    <Button text="Next" press="handleNavigation"/>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

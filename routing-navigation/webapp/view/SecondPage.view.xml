@@ -1,0 +1,9 @@
+<mvc:View controllerName="sap.com.routingnavigation.controller.SecondPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page2" title="{i18n>title}">
+        <content >
+            <Text text="Welcome to Second page"/>
+        </content>
+    </Page>
+</mvc:View>
