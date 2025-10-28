@@ -1,0 +1,13 @@
+<mvc:View controllerName="sap.com.expressionbinding.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <List items="{EmployeeModel>/Employees}" headerText="Voters list">
+                <items>
+                    <ObjectListItem type="{=${EmployeeModel>Age} > 18 ?  'Active' : 'Inactive' }" press="openClickedDetails" title="{EmployeeModel>Name}" number="{EmployeeModel>Age}" numberState="{=${EmployeeModel>Age} > 18 ?  'Success' : 'Error' }" numberUnit="{=${EmployeeModel>Age} >18 ? 'Eligible' : 'NotEligible'}" ></ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>
