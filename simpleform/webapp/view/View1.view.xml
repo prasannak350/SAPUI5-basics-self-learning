@@ -1,0 +1,21 @@
+<mvc:View controllerName="sap.com.simpleform.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <!-- when we add editable property equals to true, then label and input fields will be alligned properly and we will be able to edit that form -->
+            <form:SimpleForm editable="true">
+                <form:content>
+                    <Label text= "First Name"/>
+                    <Input/>
+                    <Label text= "Second Name"/>
+                    <Input/>
+                    <Label text= "Email Id"/>
+                    <Input/>
+                    <Label text= "Password"/>
+                    <Input/>
+                </form:content>
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>
