@@ -1,0 +1,72 @@
+<mvc:View controllerName="sap.com.tablebindingodata.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <!-- bind the table data directly from xml view -->
+            <!-- <Table items="{/Employees}">
+                <columns>
+                    <Column>
+                        <Label text="Employee ID"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="FirstName"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="BirthDate"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="Region"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="Country"></Label>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{EmployeeID}"></Text>
+                            <Text text="{FirstName}"></Text>
+                            <Text text="{BirthDate}"></Text>
+                            <Text text="{Region}"></Text>
+                            <Text text="{Country}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table> -->
+
+
+        <!-- bind the table data from controller  -->
+            <Table items="{EmployeeDataModel>/}">
+                <columns>
+                    <Column>
+                        <Label text="Employee ID"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="FirstName"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="BirthDate"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="Region"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="Country"></Label>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{EmployeeDataModel>EmployeeID}"></Text>
+                            <Text text="{EmployeeDataModel>FirstName}"></Text>
+                            <Text text="{EmployeeDataModel>BirthDate}"></Text>
+                            <Text text="{EmployeeDataModel>Region}"></Text>
+                            <Text text="{EmployeeDataModel>Country}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
