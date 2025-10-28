@@ -1,0 +1,20 @@
+<mvc:View controllerName="sap.com.Formatter.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">   
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <List items="{EmployeeModel>/Employees}">
+                <items>
+                    <CustomListItem class="sapUiTinyMargin">
+                        <HBox justifyContent="SpaceBetween">
+                            <items>
+                                <Text text = "{EmployeeModel>Name}"/>
+                                <Text text = "{parts: [{path: 'EmployeeModel>Age'},{path: 'EmployeeModel>Name'}], formatter: '.formatter.onReturnAgeMessage'}"/>
+                            </items>
+                        </HBox>
+                    </CustomListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>
