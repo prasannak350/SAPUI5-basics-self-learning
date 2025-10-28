@@ -1,0 +1,57 @@
+_schema-version: "3.2"
+ID: Multitarget-Application-MTA
+version: 0.0.1
+modules:
+- name: Multitarget-Application-MTA-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: Multitarget-Application-MTA-destination-service
+    parameters:
+      content-target: true
+  - name: Multitarget-Application-MTA_html_repo_host
+    parameters:
+      service-key:
+        name: Multitarget-Application-MTA_html_repo_host-key
+  - name: uaa_Multitarget-Application-MTA
+    parameters:
+      service-key:
+        name: uaa_Multitarget-Application-MTA-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: zmta_ui5_demo_apps_Multitarget_Application_MTA_html_repo_host
+          ServiceInstanceName: Multitarget-Application-MTA-html5-app-host-service
+          ServiceKeyName: Multitarget-Application-MTA_html_repo_host-key
+          sap.cloud.service: zmta_ui5_demo_apps
+        - Authentication: OAuth2UserTokenExchange
+          Name: zmta_ui5_demo_apps_uaa_Multitarget_Application_MTA
+          ServiceInstanceName: Multitarget-Application-MTA-xsuaa-service
+          ServiceKeyName: uaa_Multitarget-Application-MTA-key
+          sap.cloud.service: zmta_ui5_demo_apps
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+resources:
+- name: Multitarget-Application-MTA-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+    service: destination
+    service-name: Multitarget-Application-MTA-destination-service
+    service-plan: lite
+- name: Multitarget-Application-MTA_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: Multitarget-Application-MTA-html5-app-host-service
+    service-plan: app-host
+- name: uaa_Multitarget-Application-MTA
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: Multitarget-Application-MTA-xsuaa-service
+    service-plan: application
