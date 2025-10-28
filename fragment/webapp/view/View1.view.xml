@@ -1,0 +1,14 @@
+<mvc:View controllerName="sap.com.fragment.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="Fragment Demo">
+        <content />
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button text="Open" press="onOpenDialog"/>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
