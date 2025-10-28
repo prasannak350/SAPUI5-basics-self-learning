@@ -1,0 +1,90 @@
+<mvc:View controllerName="com.sap.crudoperationsodata.controller.PurchaseDetails"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" >
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <!-- <Table items="{path: '/Orders', filters: [{path: 'OrderID', operator: 'BT', value1: '10250', value2:'10263'}]}" growing="true" growingThreshold="5">
+                <columns>
+                    <Column>
+                        <Label text="Order ID"/>
+                    </Column>
+                    <Column>
+                        <Label text="Ship Name"/>
+                    </Column>
+                    <Column>
+                        <Label text="Ship Address"/>
+                    </Column>
+                    <Column>
+                        <Label text="Ship Region"/>
+                    </Column>
+                    <Column>
+                        <Label text="Order Date"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{OrderID}"/>
+                            <Text text="{ShipName}"/>
+                            <Text text="{ShipAddress}"/>
+                            <Text text="{ShipRegion}"/>
+                            <Text text="{OrderDate}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table> -->
+
+
+            <Table items="{OrdersDataModel>/OrdersData}" growing="true" growingThreshold="5" id="idExportTable">
+                <headerToolbar>
+                    <Toolbar>
+                        <ToolbarSpacer/>
+                        <Button text="Add" press="onAddNewRecord"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Label text="Order ID"/>
+                    </Column>
+                    <Column>
+                        <Label text="Ship Name"/>
+                    </Column>
+                    <Column>
+                        <Label text="Ship Address"/>
+                    </Column>
+                    <Column>
+                        <Label text="Ship Region"/>
+                    </Column>
+                    <Column>
+                        <Label text="Order Date"/>
+                    </Column>
+                    <Column>
+                        <Label text="Action"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{OrdersDataModel>OrderID}"/>
+                            <Text text="{OrdersDataModel>ShipName}"/>
+                            <Text text="{OrdersDataModel>ShipAddress}"/>
+                            <Text text="{OrdersDataModel>ShipRegion}"/>
+                            <Text text="{OrdersDataModel>OrderDate}"/>
+                            <HBox>
+                                <Button icon="sap-icon://delete" class="sapUiTinyMarginEnd" press="onDeleteRecord" type="Reject"/>
+                                <Button icon="sap-icon://edit" press="onUpdateRecord"/>
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button text="Download Records" press="onDataExport"/>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
