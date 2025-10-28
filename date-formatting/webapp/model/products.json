@@ -1,0 +1,39 @@
+{
+    "ProductCollection" :[
+        {
+            "productId": 1000,
+            "ProductName":"Laptop",
+            "SupplierName":"flipkart",
+            "DateofSale":"2017-03-26",
+            "Quantity":10
+        },
+        {
+            "productId": 1001,
+            "ProductName":"Mobile",
+            "SupplierName":"amazon",
+            "DateofSale":"2017-10-13",
+            "Quantity":15
+        },
+        {
+            "productId": 1002,
+            "ProductName":"watch",
+            "SupplierName":"myntra",
+            "DateofSale":"2019-07-23",
+            "Quantity":20
+        },
+        {
+            "productId": 1003,
+            "ProductName":"airpods",
+            "SupplierName":"flipkart",
+            "DateofSale":"2017-03-19",
+            "Quantity":30
+        },
+        {
+            "productId": 1004,
+            "ProductName":"clothes",
+            "SupplierName":"ajio",
+            "DateofSale":"2020-09-26",
+            "Quantity":50
+        }
+    ]
+}
